@@ -53,7 +53,7 @@ Java is **not a pure OOP language anymore**, but **a hybrid between OOP and func
 ## 3) Lambda Expressions
 Java lambda expressions are new in Java 8. Java lambda expressions are Java's first step into functional programming. A Java lambda expression is thus a **function which can be created without belonging to any class**. A Java lambda expression can be passed around as if it was an object and executed on demand.
 
-** Lambda Parameters
+** Lambda Parameters**
 - Zero Parameters
 - One Parameter
 - Multiple Parameters
