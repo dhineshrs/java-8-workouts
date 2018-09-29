@@ -50,5 +50,11 @@ Java is **not a pure OOP language anymore**, but **a hybrid between OOP and func
 -	Lambda makes writing unit tests fun! It allows us to create lightweight unit tests that are clean, small and quick to write. We can     stub the code we're testing, using lambdas. This allows us to test how all sorts of scenarios will affect the code
 
 
+## 3) Lambda Expressions
+Java lambda expressions are new in Java 8. Java lambda expressions are Java's first step into functional programming. A Java lambda expression is thus a **function which can be created without belonging to any class**. A Java lambda expression can be passed around as if it was an object and executed on demand.
 
-
+** Lambda Parameters
+- Zero Parameters
+- One Parameter
+- Multiple Parameters
+- Parameter Types
