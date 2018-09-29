@@ -58,3 +58,25 @@ Java lambda expressions are new in Java 8. Java lambda expressions are Java's fi
 - One Parameter
 - Multiple Parameters
 - Parameter Types
+
+## 5) Stream API
+A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
+  <br /> List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+  <br /> myList.stream()
+      <br />    .filter(s -> s.startsWith("c"))
+      <br />    .map(String::toUpperCase)
+      <br />     .sorted()
+      <br />     .forEach(System.out::println);
+- *Stream operations are either* **intermediate or terminal**.
+- **Intermediate operations** *return a stream so we can chain multiple intermediate operations** without using semicolons.
+- **Terminal operations** are either void or return a non-stream result. 
+- In the above example **filter, map and sorted are intermediate operations** whereas forEach is a terminal operation.
+- Such a chain of stream operations as seen in the example above is also known as **operation pipeline**
+
+Most stream operations accept some kind of lambda expression parameter, a functional interface specifying the exact behavior of the operation. Most of those operations must be both **non-interfering and stateless**. What does that mean?
+<br />  A function is non-interfering when it does not modify the underlying data source of the stream, e.g. in the above example no lambda expression does modify myList by adding or removing elements from the collection.
+<br /> A function is stateless when the execution of the operation is deterministic, e.g. in the above example no lambda expression depends on any mutable variables or states from the outer scope which might change during execution.
+
+### Different kind of streams
+Streams can be created from various data sources, especially collections. Lists and Sets support new methods stream() and parallelStream() to either create a sequential or a parallel stream. **Parallel streams are capable of operating on multiple threads**
