@@ -43,5 +43,14 @@ public class MyClass implements Interface1, Interface2 {
 	     defined as default methods in interfaces, it will be useless because Object class method will always be used.
 	     That’s why to avoid confusion, we can’t have default methods that are overriding Object class methods.
 	     Java interface default methods are also referred to as Defender Methods or Virtual extension methods.*/
-
+	
+	/*	Abstract Classes Versus Interfaces in Java 8
+		After introducing Default Method, it seems that interfaces and abstract classes are the same. 
+		However, they are still a different concept in Java 8.
+		
+		1. The abstract class can define constructors. 
+		    1.1 They are more structured and can have a state associated with them. 
+		2. While in contrast, default method can be implemented only in the terms of invoking other interface methods, 
+		    with no reference to a particular implementation's state. 
+		    Hence, both are used for different purposes and choosing between two really depends on the scenario context.*/
 }

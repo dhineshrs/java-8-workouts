@@ -1,5 +1,6 @@
-package staticMethod;
+package com.dlabs.java_8_workouts.staticMethod;
 
+/* Java 8 interface static method demo*/
 interface MyData {
 
 	default void print(String str) {
