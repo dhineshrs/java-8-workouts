@@ -1,8 +1,7 @@
-package com.dlabs.java_8_workouts_defaultMethod;
+package com.dlabs.java_8_workouts.defaultMethod;
 
 public interface Interface1 {
 
-	
 	void method1(String str);
 
 	// Java Interface Default Method
