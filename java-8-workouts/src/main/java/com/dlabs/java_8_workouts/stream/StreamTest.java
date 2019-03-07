@@ -1,10 +1,12 @@
 package com.dlabs.java_8_workouts.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamTest {
 
@@ -76,7 +78,42 @@ public class StreamTest {
 
 		System.out.println(studentList);
 		System.out.println("--------------------");
+		
+		
+		/*****************************************************
+        Convert List<students> to String
+       *****************************************************/
+       String name = students.stream()
+           .map(Student::getName)
+           .collect(Collectors.joining(",", "[", "]"));
+       System.out.println(name);
+       System.out.println("--------------------");
 
+		/*****************************************************
+		 * Sort List<String>
+		 *****************************************************/
+		List<String> namesList = Arrays.asList("Jayesh", "Dany", "Khyati", "Hello", "Mango");
+
+		namesList.stream().sorted().forEach(System.out::println);
+		System.out.println("--------------------");
+
+       	/*****************************************************
+		 * Conditionally apply Filter condition, say if flag is enabled then
+		 *****************************************************/
+		boolean sortConditionFlag = true;
+
+		Stream<Student> conditionalFilterResult = students.stream().filter(std -> std.getName().startsWith("J"));
+
+		if (sortConditionFlag) {
+			conditionalFilterResult = conditionalFilterResult.sorted(Comparator.comparing(Student::getName));
+		}
+
+		System.out.println("Before sorting :");
+		students.forEach(s -> System.out.println(s.getName()));
+
+		List<Student> list = conditionalFilterResult.collect(Collectors.toList());
+		System.out.println("After filter and conditional sorting :");
+		list.forEach(s -> System.out.println(s.getName()));
 	}
 
 }
